@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 
+
 <head>
   <title>Hello, world!</title>
   <meta charset="utf-8">
@@ -8,8 +9,36 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
-  <script src="main.js"></script>
-  <script src="game.js"></script>
+  <header id="site-header">
+    <div class="score container">
+      <span class="label">Score</span>
+      <span class="value">200</span>
+    </div>
+    <div class="score container">
+      <span class="label">Timer</span>
+      <span class="value">3</span>
+    </div>
+  </header>
+
+  <div id="site-main" class="deck">
+    <div class="current card">5</div>
+    <div class="actions">
+      <button class="up button">up</button>
+      <button class="down button">down</button>
+    </div>
+    <div class="next card">?</div>
+  </div>
+
+  <footer id="site-footer" class="container">
+    <p>
+      <span class="label">Step:</span>
+      <span class="step-no">1</span> / <span class="total-steps">52</span>
+    </p>
+  </footer>
+
+  <!-- <script src="main.js"></script>
+  <script src="game.js"></script> -->
 </body>
 </html>
