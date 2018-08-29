@@ -7,11 +7,11 @@ function buildDom(html) {
   return div.children[0];
 }
 
-
 function main () {
   var splashMain; 
-  var gameMain;
+  var game;
   var gameOverMain;
+
 
   //---- splash
 
@@ -21,12 +21,11 @@ function main () {
         <h1>Up or Down</h1>
         <button>Start</button>
       </main>
-    `)
+    `);
     document.body.appendChild(splashMain);
     var button = splashMain.querySelector('button');
     button.addEventListener('click',startGame);
   };
-
 
   function destroySplash() {
     splashMain.remove();
@@ -39,22 +38,16 @@ function main () {
     destroySplash();
     destroyGameOver();
     
-    // TEMPORARY
+    game = new Game();
+    game.start();
 
-    gameMain = buildDom(`
-      <main>
-        <h1>This is the Game</h1>
-      </main>
-    `);
-    document.body.appendChild(gameMain);
     window.setTimeout(function() {
       gameOver();
     }, 3000);
   };
 
-
   function destroyGame() {
-    gameMain.remove();
+    game.destroy();
   };
 
 
@@ -64,7 +57,6 @@ function main () {
     destroyGame();
     buildGameOver();
   };
-  
 
   function buildGameOver() {
     var score = 99;
@@ -79,7 +71,6 @@ function main () {
     var button = gameOverMain.querySelector('button');
     button.addEventListener('click', startGame);
   };
-
 
   function destroyGameOver() {
     if(gameOverMain) {
