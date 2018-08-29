@@ -40,10 +40,9 @@ function main () {
     
     game = new Game();
     game.start();
-
-    window.setTimeout(function() {
+    game.onOver(function() {
       gameOver();
-    }, 3000);
+    });
   };
 
   function destroyGame() {
